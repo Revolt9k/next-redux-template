@@ -3,6 +3,7 @@ import Head from "next/head";
 import { useDispatch } from "react-redux";
 import { actionSetModal } from "../store/actions/app";
 import styles from "../styles/Home.module.css";
+import React from "react";
 
 const Home: NextPage = () => {
   const dispatch = useDispatch();

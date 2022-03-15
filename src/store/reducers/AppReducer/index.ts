@@ -1,27 +1,18 @@
 import { HYDRATE } from "next-redux-wrapper";
-import { AppActionTypes, HydrateActionType } from "store/actions/app/types";
-import { SET_MODAL } from "../../constants/app";
+import { HydrateActionType } from "store/actions/app/types";
 import { AppInitialStateType } from "./types";
 
 const initialState: AppInitialStateType = {
   modal: "",
-  baseURL: "",
+  baseURL: ""
 };
 
-const AppReducer = (
-  state = initialState,
-  action: AppActionTypes | HydrateActionType
-): AppInitialStateType => {
+const AppReducer = (state = initialState, action: HydrateActionType): AppInitialStateType => {
   switch (action.type) {
     case HYDRATE: {
       return action.payload.AppReducer;
     }
-    case SET_MODAL: {
-      return {
-        ...state,
-        modal: action.modal,
-      };
-    }
+
     default:
       return state;
   }
